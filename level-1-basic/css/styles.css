@@ -424,3 +424,24 @@ footer{
 footer p {
     text-align: center;
 }
+
+/*Skills Filter Dropdown*/
+
+.skills-filter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.skills-filter-container label {
+    font-weight: 500;
+}
+
+#skillsFilter {
+padding: 0.5rem 1rem;
+border-radius: 1rem;
+border: rgb(163, 163, 163) 0.1rem solid;
+font-family: inherit;
+}
