@@ -46,6 +46,11 @@
     .about-containers {
         margin-top: 0;
     }
+
+    .modal-content {
+        width: 90%;
+        max-width: 450px;
+    }
 }
 
 @media screen and (max-width: 600px){
@@ -110,4 +115,22 @@
     .text-container {
         text-align: justify;
     }
+
+    .modal-content {
+        padding: 1.5rem;
+        max-width: 90%;
+    }
+
+    .modal-close {
+        font-size: 1.25rem;
+    }
+
+    #contactForm {
+        padding: 1.5rem;
+    }
+
+    #contactForm input,
+    #contactForm textarea {
+        font-size: 0.95rem;
+    } 
 }
