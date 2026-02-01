@@ -313,11 +313,17 @@
             <div class="about-containers">
                 <div class="details-container color-container">               
                     <h2 class="skill-sub-title project-title">Linear Programming Solver</h2>
-                    <button onclick="location.href='https://github.com/KholdHart/LPR381Proj'" class="btn btn-color-2 project-btn">Github</button>
+                    <button class="btn btn-color-2 project-btn" data-project="lp">
+                        View Project
+                    </button>
+                    <button onclick="location.href='https://github.com/KholdHart/LPR381Proj'" class="btn btn-color-2">Github</button>
                 </div>
                 <div class="details-container color-container">
                     <h2 class="skill-sub-title project-title">Register and Login</h2>
-                    <button onclick="location.href='https://github.com/Mbewe-Ob7/JAvaProj/tree/database_and_login'" class="btn btn-color-2 project-btn">Github</button>   
+                    <button class="btn btn-color-2 project-btn" data-project="login">
+                        View Project
+                    </button>
+                    <button onclick="location.href='https://github.com/Mbewe-Ob7/JAvaProj/tree/database_and_login'" class="btn btn-color-2">Github</button>   
                 </div>
             </div>
              <img src="assets/arrow.png" alt="Down Arrow Icon" class="icon arrow" onclick="location.href='#contact'">
@@ -344,14 +350,25 @@
             <div class="nav-links-container">
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
         </nav>
         <p>Copyright &#169; 2025 Kekeletso Maleka. All Rights Reserved.</p>
     </footer>
+
+    <div id="projects-modal" class="modal hidden">
+        <div class="modal-overlay"></div>
+
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+            <h4>Tech Stack</h4>
+            <ul id="modal-tech-stack"></ul>
+        </div>
+    </div>
 
     <script src="js/script.js"></script>
 </body>

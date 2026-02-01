@@ -445,3 +445,50 @@ border-radius: 1rem;
 border: rgb(163, 163, 163) 0.1rem solid;
 font-family: inherit;
 }
+
+/*Project Modal*/
+
+.modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    position: relative;
+    background: white;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    width: 90%;
+    max-width: 500px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content h2 {
+    margin-bottom: 0.5rem;
+}
+
+.modal-content ul {
+    padding-left: 1.2rem;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
