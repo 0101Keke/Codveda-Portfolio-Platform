@@ -84,3 +84,63 @@ overlay.addEventListener("click", closeModal);
 function closeModal() {
     modal.classList.add("hidden");
 }
+
+
+//Contact Form Listener and Validation
+const form = document.getElementById("contactForm");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  validateForm();
+});
+
+function validateForm() {
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  let isValid = true;
+
+  document.getElementById("nameError").textContent = "";
+  document.getElementById("emailError").textContent = "";
+  document.getElementById("messageError").textContent = "";
+  document.getElementById("successMessage").textContent = "";
+
+  if (name === "") {
+    document.getElementById("nameError").textContent = "Name is required";
+    isValid = false;
+  }
+
+  if (email === "") {
+    document.getElementById("emailError").textContent = "Email is required";
+    isValid = false;
+  } else if (!email.includes("@")) {
+    document.getElementById("emailError").textContent = "Invalid email format";
+    isValid = false;
+  }
+
+  if (message.length < 10) {
+    document.getElementById("messageError").textContent =
+      "Message must be at least 10 characters";
+    isValid = false;
+  }
+
+  if (isValid) {
+    document.getElementById("successMessage").textContent =
+      "Message sent successfully!";
+    form.reset();
+  }
+}
+
+document.getElementById("email").addEventListener("input", function () {
+  if (!this.value.includes("@")) {
+    document.getElementById("emailError").textContent = "Invalid email format";
+  } else {
+    document.getElementById("emailError").textContent = "";
+  }
+});
+
+localStorage.setItem("lastMessage", JSON.stringify({ name, email, message }));
+
+
+
