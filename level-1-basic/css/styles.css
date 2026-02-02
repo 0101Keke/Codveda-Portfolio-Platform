@@ -276,6 +276,8 @@ body.dark-mode .icon {
 
 .btn-color-2 {
     background: none;
+    color: var(--text-main);
+    border-color: var(--border-main);
 }
 
 .btn-color-2:hover {
