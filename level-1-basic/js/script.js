@@ -143,4 +143,33 @@ document.getElementById("email").addEventListener("input", function () {
 localStorage.setItem("lastMessage", JSON.stringify({ name, email, message }));
 
 
+//Light/Dark Mode Toggle
+const themeToggle = document.getElementById("themeToggle");
+const body = document.body;
+
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "dark") {
+  body.classList.add("dark-mode");
+  themeToggle.src = "assets/icons/sun.png";
+}
+
+themeToggle.addEventListener("click", () => {
+  themeToggle.classList.add("fade");
+
+  setTimeout(() => {
+    body.classList.toggle("dark-mode");
+
+    const isDark = body.classList.contains("dark-mode");
+
+    themeToggle.src = isDark
+      ? "assets/light mode.png"
+      : "assets/dark mode.png";
+
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+
+    themeToggle.classList.remove("fade");
+  }, 200);
+});
+
 
