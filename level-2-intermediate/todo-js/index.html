@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Kanban To-Do List 📖</h1>
+
+        <div class="controls">
+            <select id="topicFilter">
+                <option value="all">All Topics</option>
+            </select>
+
+            <button id="todayFilter">Today</button>
+            <button id="openRecycle">🗑️ Recycle Bin</button>
+        </div>
+    </header>
+
+    <section class="legend">
+        <span class="red">🟥 Urgent</span>
+        <span class="orange">🟧 Important</span>
+        <span class="yellow">🟨 Flexible</span>
+        <span class="green">🟩 Completed</span>
+    </section>
+
+    <section class="add-task">
+        <input id="taskTitle" placeholder="Task title"/>
+        <input id="taskTopic" placeholder="Topic (optional)"/>
+
+        <input type="date" id="taskDate"/>
+        <input type="time" id="taskTime"/>
+
+        <select id="repeat">
+            <option value="none">No Repeat</option>
+            <option value="daily">Daily</option>
+            <option value="weekly">Weekly</option>
+        </select>
+
+        <button id="addTask">Add Task</button>
+    </section>
+
+    <main class="board">
+        <div class="column" data-status="todo">
+            <h2>To Do</h2>
+            <div class="task-list" id="todo"></div>
+        </div>
+
+        <div class="column" data-status="progress">
+            <h2>In Progress</h2>
+            <div class="task-list" id="progress"></div>
+        </div>
+
+        <div class="column" data-status="done">
+            <h2>Completed</h2>
+            <div class="task-list" id="done"></div>
+        </div>
+    </main>
+
+    <div class="modal" id="recycleModal">
+        <div class="modal-content">
+            <h2>Recycle Bin</h2>
+            <div id="recycleList"></div>
+            <button id="closeRecycle">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
